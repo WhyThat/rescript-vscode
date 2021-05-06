@@ -61,7 +61,7 @@ let sendUpdatedDiagnostics = () => {
     // diff
     Object.keys(filesAndErrors).forEach((file) => {
       let params: p.PublishDiagnosticsParams = {
-        uri: file,
+        uri: 'file://' + file,
         diagnostics: filesAndErrors[file],
       };
       let notification: m.NotificationMessage = {
@@ -79,7 +79,7 @@ let sendUpdatedDiagnostics = () => {
         if (filesAndErrors[file] == null) {
           // Doesn't exist in the new diagnostics. Clear this diagnostic
           let params: p.PublishDiagnosticsParams = {
-            uri: file,
+            uri:'file://' + file,
             diagnostics: [],
           };
           let notification: m.NotificationMessage = {
@@ -99,7 +99,7 @@ let deleteProjectDiagnostics = (projectRootPath: string) => {
   if (root != null) {
     root.filesWithDiagnostics.forEach((file) => {
       let params: p.PublishDiagnosticsParams = {
-        uri: file,
+        uri:'file://' + file,
         diagnostics: [],
       };
       let notification: m.NotificationMessage = {
