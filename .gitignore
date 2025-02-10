@@ -25,3 +25,6 @@ _opam/
 _build/
 
 *.tsbuildinfo
+# nix related folder
+result
+tags
