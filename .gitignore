@@ -23,3 +23,7 @@ rescript-tools.exe
 
 _opam/
 _build/
+
+# nix related folder
+result
+tags
