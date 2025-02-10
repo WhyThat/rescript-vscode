@@ -28,3 +28,6 @@ _build/
 
 # VSCode test downloads
 .vscode-test/
+# nix related folder
+result
+tags
