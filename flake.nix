@@ -12,7 +12,7 @@
     utils.lib.eachDefaultSystem
     (system: let
       pkgs = import nixpkgs {inherit system;};
-      version_extension = "1.60.0";
+      version_extension = "1.66.0";
 
       rescript-analysis = pkgs.ocamlPackages.buildDunePackage {
         pname = "analysis";
@@ -33,7 +33,7 @@
 
         src = ./server;
         nativeBuildInputs = [pkgs.esbuild];
-        npmDepsHash = "sha256-BqdXpyVc0ECbr+UcivRW0zPPHwJjKgUmpnf8j7ZXJOg=";
+        npmDepsHash = "sha256-87jUMXtgr2IsX2H6ghXfEq7QeXMwgreAnmajmop34nU=";
 
         buildPhase = ''
           npm install
