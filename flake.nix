@@ -12,14 +12,14 @@
     utils.lib.eachDefaultSystem
     (system: let
       pkgs = import nixpkgs {inherit system;};
-      version_extension = "1.72.0";
+      version_extension = "1.74.0";
 
       rescript-analysis = pkgs.ocamlPackages.buildDunePackage {
         pname = "analysis";
         version = version_extension;
         src = ./.;
         minimalOCamlVersion = "5.2.1";
-        nativeBuildInputs = with pkgs; [ocamlPackages.cppo];
+        nativeBuildInputs = with pkgs; [ocamlPackages.cppo git];
       };
 
       platformDir =
@@ -33,7 +33,7 @@
         version = version_extension;
 
         src = ./server;
-        npmDepsHash = "sha256-ossX/zc9/gQgHmdB6sQzG/w1zYFbskAFCkzCberbNf8=";
+        npmDepsHash = "sha256-Qsq0jCxdNdlpEiGzuB/JcTEfZ6DJ7bIbHv65JozjW70=";
         
         dontNpmBuild = true;
 
@@ -49,7 +49,7 @@
 
         src = ./.;
         nativeBuildInputs = [pkgs.esbuild];
-        npmDepsHash = "sha256-aAKBTGm1NhYeJneBXo/m53gnjbmwE4OWC7VONfecnG8=";
+        npmDepsHash = "sha256-QDHlOWjWEKo3/WZKh3YiYUUYLq9Ekf5OU/l3+c9qhs8=";
 
         # Skip all npm lifecycle scripts
         npmFlags = ["--ignore-scripts"];
